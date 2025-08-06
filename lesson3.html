@@ -75,7 +75,7 @@
         <div class="modal-body p-4">
 
           <div id="score" class="alert alert-info d-none text-center fw-bold mb-4"></div>
-
+            <div id="feedback" class="mb-4"></div> 
           <!-- Questions -->
           <div class="mb-4">
             <label class="form-label fw-bold">1. What does CSS stand for?</label>
@@ -171,7 +171,7 @@
 
   <!-- Quiz Logic -->
   <script>
-    document.getElementById('quizForm').addEventListener('submit', function (e) {
+     document.getElementById('quizForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const correctAnswers = {
@@ -184,28 +184,37 @@
 
       let score = 0;
       let allAnswered = true;
+      let feedbackHTML = '';
 
       for (let key in correctAnswers) {
         const selected = document.querySelector('input[name="' + key + '"]:checked');
+        const questionNum = key.replace('q', '');
+
         if (!selected) {
           allAnswered = false;
         } else if (selected.value === correctAnswers[key]) {
           score++;
+        } else {
+          feedbackHTML += `<div class="text-danger fw-bold">❌ Question ${questionNum} is incorrect. Correct answer is: ${correctAnswers[key].toUpperCase()}</div>`;
         }
       }
 
       const scoreBox = document.getElementById('score');
+      const feedbackBox = document.getElementById('feedback');
 
       if (!allAnswered) {
         scoreBox.classList.remove('d-none', 'alert-info');
         scoreBox.classList.add('alert-danger');
         scoreBox.textContent = 'Please answer all questions before submitting.';
+        feedbackBox.innerHTML = '';
         return;
       }
 
       scoreBox.classList.remove('d-none', 'alert-danger');
       scoreBox.classList.add('alert-info');
       scoreBox.textContent = 'Your Score: ' + score + ' out of 5';
+
+      feedbackBox.innerHTML = feedbackHTML || '<div class="text-success fw-bold">✅ All answers are correct!</div>';
     });
   </script>
 
