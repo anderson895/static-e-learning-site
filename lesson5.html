@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 5: CSS Styling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="font-family: 'Inter', sans-serif;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="material-icons me-2">school</span> E-Learning
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><span class="material-icons me-1">home</span> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html"><span class="material-icons me-1">menu_book</span> Courses</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h2 class="mb-4">Lesson 5: CSS – Styling Your Web Page</h2>
+
+    <!-- YouTube Embed -->
+    <div class="embed-responsive embed-responsive-16by9 mb-4 ratio ratio-16x9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yfoY53QXEnI" allowfullscreen></iframe>
+    </div>
+
+    <!-- Lesson Content -->
+    <p>
+      Cascading Style Sheets (CSS) is used to style and layout web pages — for example, to change the font, color, size, and spacing of your content. CSS can also be used to create responsive layouts and control how web pages appear on different devices.
+    </p>
+
+    <!-- Quiz Button -->
+    <button class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#quizModal">
+      <span class="material-icons me-1">quiz</span> Take Quiz
+    </button>
+  </div>
+
+  <!-- Quiz Modal -->
+  <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title" id="quizModalLabel">Quick Quiz: CSS Basics</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label>1. What does CSS stand for?</label>
+              <select class="form-select">
+                <option>Computer Style Sheets</option>
+                <option>Cascading Style Sheets</option>
+                <option>Creative Style System</option>
+                <option>Colorful Style Sheets</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label>2. How do you apply an external CSS file to an HTML document?</label>
+              <select class="form-select">
+                <option>&lt;style src="style.css"&gt;</option>
+                <option>&lt;script src="style.css"&gt;</option>
+                <option>&lt;link rel="stylesheet" href="style.css"&gt;</option>
+                <option>&lt;css href="style.css"&gt;</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Submit Answers</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
